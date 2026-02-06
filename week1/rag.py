@@ -37,7 +37,14 @@ QUESTION = (
 
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = (
+    "You are a precise coding assistant. Use ONLY the provided context. "
+    "If required details are missing, say you cannot answer. "
+    "Return a single fenced Python code block and nothing else. "
+    "Include necessary imports. Use the documented Base URL, endpoint, "
+    "and authentication header. Raise for non-200 responses and return only "
+    "the user's name string."
+)
 
 
 # For this simple example
@@ -56,7 +63,7 @@ def YOUR_CONTEXT_PROVIDER(corpus: List[str]) -> List[str]:
 
     For example, return [] to simulate missing context, or [corpus[0]] to include the API docs.
     """
-    return []
+    return corpus
 
 
 def make_user_prompt(question: str, context_docs: List[str]) -> str:
@@ -93,7 +100,6 @@ def test_your_prompt(system_prompt: str, context_provider: Callable[[List[str]],
     """Run up to NUM_RUNS_TIMES and return True if any output matches EXPECTED_OUTPUT."""
     context_docs = context_provider(CORPUS)
     user_prompt = make_user_prompt(QUESTION, context_docs)
-
     for idx in range(NUM_RUNS_TIMES):
         print(f"Running test {idx + 1} of {NUM_RUNS_TIMES}")
         response = chat(

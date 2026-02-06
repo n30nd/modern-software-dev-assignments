@@ -9,7 +9,24 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in! Try to get as close to 100% correctness across all runs as possible.
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+You must solve the problem using EXACTLY 3 different approaches.
+
+For each approach:
+- Provide step-by-step reasoning.
+- End with a line exactly in this format:
+Final of approach 1: <number>
+Final of approach 2: <number>
+Final of approach 3: <number>
+
+Then pick the majority number among the three finals.
+ope
+Finally output EXACTLY ONE last line at the very end:
+Answer: <number>
+
+Do NOT write "Answer:" anywhere except the final line.
+Do NOT add any extra text on the final line.
+"""
 
 USER_PROMPT = """
 Solve this problem, then give the final answer on the last line as "Answer: <number>".

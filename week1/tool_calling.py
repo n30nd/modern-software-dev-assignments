@@ -70,7 +70,12 @@ TOOL_REGISTRY: Dict[str, Callable[..., str]] = {
 # ==========================
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+For tool-calling tasks, respond a JSON object that has exactly the following lines:
+"tool": "output_every_func_return_type"
+"args": {"file_path": ""}
+
+"""
 
 
 def resolve_path(p: str) -> str:

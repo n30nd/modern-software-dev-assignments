@@ -7,7 +7,28 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+For Reverse tasks, you will be given a word and you need to reverse the order of letters in that word.
+Example 1:
+User: Reverse the order of letters in the following word. Only output the reversed word, no other text:
+example
+Assistant: elpmaxe
+
+Example 2:
+User: Reverse the order of letters in the following word. Only output the reversed word, no other text:
+testing
+Assistant: gnitset
+
+Example 3:
+User: Reverse the order of letters in the following word. Only output the reversed word, no other text:
+status
+Assistant: sutats
+
+Example 4:
+User: Reverse the order of letters in the following word. Only output the reversed word, no other text:
+http
+Assistant: ptth
+"""
 
 USER_PROMPT = """
 Reverse the order of letters in the following word. Only output the reversed word, no other text:

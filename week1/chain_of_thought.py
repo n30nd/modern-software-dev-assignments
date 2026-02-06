@@ -8,7 +8,9 @@ load_dotenv()
 NUM_RUNS_TIMES = 5
 
 # TODO: Fill this in!
-YOUR_SYSTEM_PROMPT = ""
+YOUR_SYSTEM_PROMPT = """
+For modular arithmetic problems, use step-by-step reasoning (chain of thought) to arrive at the final answer.
+"""
 
 
 USER_PROMPT = """
